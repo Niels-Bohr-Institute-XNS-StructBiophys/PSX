@@ -19,9 +19,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with PSX. If not, see <http://www.gnu.org/licenses/>.
 
-If you use PSX in your work, please cite:
-
-Pedersen, Wang, Tidemand, Martel, Lindorff-Larsen, & Arleth (2019)
+If you use PSX in your work, please cite:  
+Pedersen, Wang, Tidemand, Martel, Lindorff-Larsen, & Arleth (2019)  
 J. Appl. Crystallgr. XX(YY), ZZZ-WWW
 
 ## Table of Contents
