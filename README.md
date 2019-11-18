@@ -21,7 +21,7 @@ along with PSX. If not, see <http://www.gnu.org/licenses/>.
 
 If you use PSX in your work, please cite:  
 Pedersen, Wang, Tidemand, Martel, Lindorff-Larsen, & Arleth (2019)  
-J. Appl. Crystallgr. XX(YY), ZZZ-WWW
+J. Appl. Crystallgr. 52, 1427–1436
 
 ## Table of Contents
 
