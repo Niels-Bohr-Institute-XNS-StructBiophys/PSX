@@ -26,10 +26,6 @@ def CalculateExchangeRatesForASingleChain(Chain, Temperature, pH, ReferenceData)
 		sys.stderr.write("Either poly or oligo must be selected as reference data. Exiting.\n")
 		sys.exit()
 
-	# Temperature correction
-	R = 1.987
-	TemperatureCorrection = (1.0 / Temperature - 1.0 / 293.0) / R
-
 	# Activation energies (in cal/mol)
 	AcidActivationEnergy    = 14000.0
 	BaseActivationEnergy    = 17000.0
@@ -38,11 +34,16 @@ def CalculateExchangeRatesForASingleChain(Chain, Temperature, pH, ReferenceData)
 	AspActivationEnergy = 1000.0
 	GluActivationEnergy = 1083.0
 	HisActivationEnergy = 7500.0
+	
+	# Temperature correction (note the different calibration temperatures)
+	R = 1.987
+	TemperatureCorrection = (1.0 / Temperature - 1.0 / 293.0) / R
 
-	# Corrections based on activation energies
 	AcidTemperatureCorrection    = math.exp(- TemperatureCorrection * AcidActivationEnergy)
 	BaseTemperatureCorrection    = math.exp(- TemperatureCorrection * BaseActivationEnergy)
 	SolventTemperatureCorrection = math.exp(- TemperatureCorrection * SolventActivationEnergy)
+	
+	TemperatureCorrection = (1.0 / Temperature - 1.0 / 278.0) / R
 
 	AspTemperatureCorrection = math.exp(- TemperatureCorrection * AspActivationEnergy)
 	GluTemperatureCorrection = math.exp(- TemperatureCorrection * GluActivationEnergy)
@@ -55,7 +56,7 @@ def CalculateExchangeRatesForASingleChain(Chain, Temperature, pH, ReferenceData)
 	pKD   = 15.05
 	pKAsp = 4.48 * AspTemperatureCorrection
 	pKGlu = 4.93 * GluTemperatureCorrection
-	pKHis = 7.40 * HisTemperatureCorrection
+	pKHis = 7.42 * HisTemperatureCorrection
 
 	LambdaProtonatedAcidAsp = math.log(10.0 ** (-0.90 - pH) / (10.0 ** -pKAsp + 10.0 ** -pH) + 10.0 ** ( 0.90 - pKAsp) / (10.0 ** -pKAsp + 10.0 ** -pH), 10.0)
 	LambdaProtonatedAcidGlu = math.log(10.0 ** (-0.60 - pH) / (10.0 ** -pKGlu + 10.0 ** -pH) + 10.0 ** (-0.90 - pKGlu) / (10.0 ** -pKGlu + 10.0 ** -pH), 10.0)

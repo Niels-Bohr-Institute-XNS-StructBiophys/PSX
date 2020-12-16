@@ -40,7 +40,7 @@ if __name__ == "__main__":
                   "*                                                                         *\n" + \
                   "* If you use PSX in your research, please reference:                      *\n" + \
                   "* Pedersen, Wang, Tidemand, Martel, Lindorff-Larsen, & Arleth (2019)      *\n" + \
-                  "* Some journal XX(YY), ZZZ-WWW                                            *\n" + \
+                  "* J. Appl. Crystallogr. 52, 1427-1436                                     *\n" + \
                   "***************************************************************************\n"
 
 	sys.stdout.write(Description)
